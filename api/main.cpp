@@ -8,7 +8,7 @@
 #include <resolv.h>
 #include <cstdio>
 
-#include "util/socketUtils.h"
+#include "util/utils.h"
 #include "config/environmentVars.h"
 
 int runningAsRoot();
