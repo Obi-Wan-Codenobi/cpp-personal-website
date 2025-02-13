@@ -1,0 +1,103 @@
+
+html{
+    min-height: 100%; /* This makes the gradient keep flowing through the entire content and not repeat*/
+}
+
+
+body {
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(to bottom, #005379, #000);   
+    color: white;
+    margin: 0 auto;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 1em;
+    padding-top: 2%;
+
+}
+
+
+
+h1, #headerName {
+    font-size: 2em;
+    background: linear-gradient(to right, #ff69b4, #9e18d7); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin: 0;
+}
+
+#headerName{
+    text-decoration: none;
+   
+}
+
+
+
+
+h2 {
+    font-size: 3em;
+    background: linear-gradient(to right, #50d3ff, #bf2ffd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin: 0;
+    margin-top: 1em;
+}
+
+#menu-banner{
+    justify-content: center;
+}
+#menu-buttons-container{
+  
+    
+    background: radial-gradient(circle at center, rgba(255, 64, 207, 0.398), rgba(255, 0, 208, 0.138));
+
+    width: max-content;
+    margin: 0 auto;     
+    padding: 1%; 
+    display: flex;
+    border-radius: 15px;
+    margin-top: 1em;
+
+}
+
+#menu-buttons-container button{
+  margin-top: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0.5em;
+    padding: 0.75em; 
+    text-align: center;
+    flex-grow: 1; 
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+
+}
+
+
+#menu-button button{ 
+   /* This doesnt work for some reason... go back and delete this ID in html*/
+    text-align: center;
+}
+
+
+
+.box {
+    margin: 1em;
+    background: radial-gradient(circle at center, rgba(255, 64, 207, 0.398), rgba(255, 0, 208, 0.138));
+      border-radius: 15px;
+      padding: 1em;
+
+}
+
+.content {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin: 0 auto;
+    
+}
