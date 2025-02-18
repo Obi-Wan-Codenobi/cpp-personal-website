@@ -7,12 +7,13 @@
 #include <stdlib.h>
 #include <resolv.h>
 #include <cstdio>
-
+#include <vector>
 #include "util/utils.h"
 #include "config/environmentVars.h"
+#include "services/services.h"
 
 int runningAsRoot();
-void apiServe(Logger log);
+void apiServe(util::Logger log);
 
 int main(int argc, char *argv[])
 {
@@ -37,7 +38,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    Logger log = new Logger(logging);
+    util::Logger log = new util::Logger(logging);
     if (!runningAsRoot())
     {
         log.error("This program must be run as root/sudo user!");
@@ -53,11 +54,11 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void apiServe(Logger log)
+void apiServe(util::Logger log)
 {
     int sd = -1, sd2 = -1;
     int rc, length, on = 1;
-    char buffer[BUFFER_LENGTH];
+    std::vector<char> buffer[BUFFER_LENGTH];
     fd_set read_fd;
     struct timeval timeout;
     struct sockaddr_in serveraddr;
@@ -109,7 +110,7 @@ void apiServe(Logger log)
         printf("server received %d bytes\n", rc);
         printf("%s", buffer);
 
-        const char *msg =
+        std::string msg = 
             "HTTP/1.1 200 OK\r\n"
             "Content-Type: text/html\r\n"
             "Content-Length: 100\r\n"
@@ -124,7 +125,7 @@ void apiServe(Logger log)
         memset(buffer, 0, sizeof(buffer));
         // sprintf(buffer, "%d", 42);
 
-        rc = SSL_write(ssl, msg, strlen(msg));
+        rc = SSL_write(ssl, msg.data(), msg.size());
         if (rc < 0)
         {
             perror("Send() failed\n");
