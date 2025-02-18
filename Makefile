@@ -16,7 +16,7 @@ all: compile run
 .PHONY: compile
 compile:
 	@echo "Compiling $(COMPILED_FILE_NAME) ..."
-	g++ -Wall -O3 -I$(OPENSSL_INCLUDE_PATH) -L$(OPENSSL_LIB_PATH) $(MAIN_API_FILE) -o $(COMPILED_FILE_NAME) -lssl -lcrypto
+	g++ -std=c++23 -Wall -O3 -I$(OPENSSL_INCLUDE_PATH) -L$(OPENSSL_LIB_PATH) $(MAIN_API_FILE) -o $(COMPILED_FILE_NAME) -lssl -lcrypto
 
 .PHONY: run
 run: 
