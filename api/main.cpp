@@ -1,4 +1,5 @@
 #include "cstdlib"
+#include <algorithm>
 #include <sys/select.h>
 #include <stdio.h>
 #include <string.h>
@@ -10,7 +11,7 @@
 #include <vector>
 #include "util/utils.h"
 #include "config/environmentVars.h"
-#include "services/services.h"
+#include "routes/routes.h"
 
 int runningAsRoot();
 void apiServe(util::Logger log);
@@ -58,7 +59,7 @@ void apiServe(util::Logger log)
 {
     int sd = -1, sd2 = -1;
     int rc, length, on = 1;
-    std::vector<char> buffer[BUFFER_LENGTH];
+    std::vector<char> buffer(BUFFER_LENGTH);
     fd_set read_fd;
     struct timeval timeout;
     struct sockaddr_in serveraddr;
@@ -94,7 +95,7 @@ void apiServe(util::Logger log)
 
         length = BUFFER_LENGTH;
 
-        rc = SSL_read(ssl, buffer, sizeof(buffer));
+        rc = SSL_read(ssl, buffer.data(), buffer.size());
         // test error rc < 0 or rc == 0 or   rc < sizeof(buffer
         if (rc < 0)
         {
@@ -108,22 +109,21 @@ void apiServe(util::Logger log)
         }
 
         printf("server received %d bytes\n", rc);
-        printf("%s", buffer);
+        
+        util::Request received_request (std::string(buffer.begin(), buffer.end()));
+        received_request.printRequest();
+
+        std::string response_body = routes::router(received_request);
+        std::string content_length = std::to_string(response_body.size());
 
         std::string msg = 
             "HTTP/1.1 200 OK\r\n"
             "Content-Type: text/html\r\n"
-            "Content-Length: 100\r\n"
+            "Content-Length: " + content_length +"\r\n"
             "Connection: close\r\n"
-            "\r\n"
-            "<!DOCTYPE html>\r\n"
-            "<html>\r\n"
-            "<head><title>Test Page</title></head>\r\n"
-            "<body><h1>Hello, world!</h1></body>\r\n"
-            "</html>\r\n";
+            "\r\n" +
+            response_body;
 
-        memset(buffer, 0, sizeof(buffer));
-        // sprintf(buffer, "%d", 42);
 
         rc = SSL_write(ssl, msg.data(), msg.size());
         if (rc < 0)
