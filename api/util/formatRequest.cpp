@@ -72,5 +72,26 @@ namespace util {
                 std::cout << "Body:\n" << this->body << "\n";
             }
 
+            std::string getRequestString() const {
+                std::ostringstream oss;
+                oss << "Method: " << this->request_type << "\n";
+                oss << "URL: " << this->url << "\n";
+                oss << "HTTP Version: " << this->http_version << "\n";
+                oss << "Headers:\n";
+                for (const auto& header : this->headers) {
+                    oss << "  " << header.first << ": " << header.second << "\n";
+                }
+                oss << "Body:\n" << this->body << "\n";
+                return oss.str();
+            }
+
+            std::string getRequestWithoutHeadersString() const {
+                std::ostringstream oss;
+                oss << this->request_type << " ";
+                oss << this->url << " ";
+                oss << this->http_version << "\n";
+                return oss.str();
+            }
+
     };
 }
