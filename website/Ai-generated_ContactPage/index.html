@@ -1,244 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home</title>
-        <link id="styleSheetInUse" href="./style.css" rel="stylesheet">
-    </head>
-    <body>
-        <div id="menu-banner">
-            <h1 id="header-name">
-                <a href="./../index.html" id="headerName">
-                    Jaxon Singleton
-                </a>
-            </h1>
 
-            
-            <div class="drop-down" id = "menu-buttons-container"> 
-                <a href="./../index.html"><button class ="menu-button" id="landingPage"> Home </button></a>
-                <a href="./../portfolio/index.html"><button class ="menu-button" id="portfolio"> Portfolio </button></a>
-                <a href="./../qualifications/index.html"><button class="menu-button" id="qualifications"> Qualifications </button></a>
-                <a href="./../service/index.html"><button class="menu-button" id="service"> Service </button></a>
-                <a href="./../Ai-generated_ContactPage/index.html"><button class="menu-button" id="ai-generated_ContactPage"> Contact </button></a>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <!-- Preload critical assets (CSS, JS, images) -->
+    <link rel="preload" href="./style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="/IMG_7011.png" as="image">
 
-                <a href=""><button onclick="toggleStyleSheet()" class="menu-button"> Toggle Theme </button> </a>
-                <script src="script.js"> </script>
-
+    <!-- Prefetch assets for future navigation -->
+    <link rel="prefetch" href="/portfolio/">
+    <link rel="prefetch" href="/qualifications/">
+    <link rel="prefetch" href="/service/">
+    <link rel="prefetch" href="/Ai-generated_ContactPage/">
     
+    <link id="styleSheetInUse" href="./style.css" rel="stylesheet">
+</head>
 
-            </div>
+<body>
+    <div id="menu-banner">
+        <h1 id="header-name">
+            <a href="./../index.html" id="headerName">
+                Jaxon Singleton
+            </a>
+        </h1>
+
+
+        <div class="drop-down" id="menu-buttons-container">
+            <a href="/"><button class="menu-button" id="landingPage"> Home </button></a>
+            <a href="/portfolio/"><button class="menu-button" id="portfolio"> Portfolio </button></a>
+            <a href="/qualifications/"><button class="menu-button" id="qualifications"> Qualifications </button></a>
+            <a href="/service/"><button class="menu-button" id="service"> Service </button></a>
+            <a href="/Ai-generated_ContactPage/"><button class="menu-button" id="ai-generated_ContactPage"> Contact
+                </button></a>
+
+            <a href=""><button onclick="toggleStyleSheet()" class="menu-button"> Toggle Theme </button> </a>
+            <script src="script.js"> </script>
+
+
 
         </div>
 
-        <div class= "content">
-            <!-- Inside the content div -->
-            <h2>Contact Me</h2>
-            <p>Please reach out to me if you think I would be a good fit for the project.</p>
+    </div>
 
-            <div class="box">
-                <p id="text">Feel free to get in touch with me using the form below.</p>
+    <div class="content">
+        <!-- Inside the content div -->
+        <h2>Contact Me</h2>
+        <p>Please reach out to me if you think I would be a good fit for the project.</p>
 
-                <button class="contact-button" id="contactMeBtn">Click Here to Reach Out</button>
-            </div>
+        <div class="box">
+            <p id="text">Feel free to get in touch with me using the form below.</p>
 
-            <script>
-                document.getElementById('contactMeBtn').addEventListener('click', function () {
-                    var subject = encodeURIComponent("I WANT TO HIRE YOU!");
-                    window.location.href = 'mailto:jaxonsingleton@tamu.edu?subject=' + subject;
-                });
-            </script>
-
-            <h2> Script to ChatGPT 3.5</h2>
-
-            <p>
-                Please create me HTML5 that goes inside my content div:
-            </p>
-
-            <p>
-
-                &lt;!DOCTYPE html&gt;
-                &lt;html lang="en"&gt;
-                    &lt;head&gt;
-                        &lt;title&gt;&lt;/title&gt;
-                        &lt;meta charset="UTF-8"&gt;
-                        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-                        &lt;title&gt;Home&lt;/title&gt;
-                        &lt;link id="styleSheetInUse" href="./style.css" rel="stylesheet"&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                        &lt;div id="menu-banner"&gt;
-                            &lt;h1 id="header-name"&gt;
-                                &lt;a href="./../index.html" id="headerName"&gt;
-                                    Jaxon Singleton
-                                &lt;/a&gt;
-                            &lt;/h1&gt;
-                
-                            
-                            &lt;div class="drop-down" id="menu-buttons-container"&gt; 
-                                &lt;a href="./../index.html"&gt;&lt;button class="menu-button" id="landingPage"&gt; Home &lt;/button&gt;&lt;/a&gt;
-                                &lt;a href="./../portfolio/index.html"&gt;&lt;button class="menu-button" id="portfolio"&gt; Portfolio &lt;/button&gt;&lt;/a&gt;
-                                &lt;a href="./../qualifications/index.html"&gt;&lt;button class="menu-button" id="qualifications"&gt; Qualifications &lt;/button&gt;&lt;/a&gt;
-                                &lt;a href="./../service/index.html"&gt;&lt;button class="menu-button" id="service"&gt; Service &lt;/button&gt;&lt;/a&gt;
-                                &lt;a href="./../Ai-generated_ContactPage/index.html"&gt;&lt;button class="menu-button" id="ai-generated_ContactPage"&gt; Contact &lt;/button&gt;&lt;/a&gt;
-                
-                                &lt;a href=""&gt;&lt;button onclick="toggleStyleSheet()" class="menu-button"&gt; Toggle Theme &lt;/button&gt;&lt;/a&gt;
-                                &lt;script src="script.js"&gt; &lt;/script&gt;
-                
-                            &lt;/div&gt;
-                
-                        &lt;/div&gt;
-                
-                        &lt;div class="content"&gt;
-                    
-                
-                        &lt;/div&gt;
-                
-                    &lt;/body&gt;
-                &lt;/html&gt;
-
-                </p>
-                
-<p>
-Okay so I want a contact button that takes any user to their native email appilication and send a message to my email "jaxonsingleton@tamu.edu" and with the subject "I WANT TO HIRE YOU!"
-
-Above the contact page I want a "Contact Me" h2 header.
-Below the "Contact Me" I want a paragraph that reads "Please reach out to me if you think I would be a good fit for the project"
-
-
-Next Create CSS that matches the theme of my page. Make sure the button looks very nice and professional. Additonally make sure everything is centered.
-
-Here is the css I have been using:
-
-</p>
-
-
-<p>
-html{
-    min-height: 100%; /* This makes the gradient keep flowing through the entire content and not repeat*/
-}
-
-
-body {
-    height: 100%;
-    width: 60%;
-    background: linear-gradient(to bottom, #005379, #000);   
-    color: white;
-    margin: 0 auto;
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-bottom: 1em;
-    padding-top: 2%;
-
-}
-
-
-
-h1, #headerName {
-    font-size: 2em;
-    background: linear-gradient(to right, #ff69b4, #9e18d7); 
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-align: center;
-    margin: 0;
-}
-
-#headerName{
-    text-decoration: none;
-   
-}
-
-
-
-
-h2 {
-    font-size: 3em;
-    background: linear-gradient(to right, #50d3ff, #bf2ffd);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-align: center;
-    margin: 0;
-    margin-top: 1em;
-}
-
-#menu-banner{
-    justify-content: center;
-}
-#menu-buttons-container{
-  
-    
-    background: radial-gradient(circle at center, rgba(255, 64, 207, 0.398), rgba(255, 0, 208, 0.138));
-
-    width: max-content;
-    margin: 0 auto;     
-    padding: 1%; 
-    display: flex;
-    border-radius: 15px;
-    margin-top: 1em;
-
-}
-
-#menu-buttons-container button{
-  margin-top: 20px;
-    font-size: 1em;
-    font-weight: bold;
-    margin: 0.5em;
-    padding: 0.75em; 
-    text-align: center;
-    flex-grow: 1; 
-    background-color: transparent;
-    box-shadow: none;
-    border: none;
-
-}
-
-
-#menu-button button{ 
-   /* This doesnt work for some reason... go back and delete this ID in html*/
-    text-align: center;
-}
-
-
-
-.box {
-    margin: 0 auto;
-    background: radial-gradient(circle at center, rgba(255, 64, 207, 0.398), rgba(255, 0, 208, 0.138));
-    border-radius: 15px;
-    padding: 1em;
-    text-align: center;
-
-}
-
-.content {
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-    margin: 0 auto;
-    
-}
-
-#contactMe{
-    border-radius: 20em;
-    font-weight: bold;
-    font-size: 2em;
-    background-color: rgba(255, 255, 255, 0.45);
-    box-shadow: none;
-    border: none;
-}
-
-#text {
-    font-size: 1.5em;
-}
-</p>
-
-          
-
+            <button class="contact-button" id="contactMeBtn">Click Here to Reach Out</button>
         </div>
 
-    
-    </body>
+        <script>
+            document.getElementById('contactMeBtn').addEventListener('click', function () {
+                var subject = encodeURIComponent("I WANT TO HIRE YOU!");
+                window.location.href = 'mailto:jaxonsingleton@tamu.edu?subject=' + subject;
+            });
+        </script>
+
+        <h2> Script to ChatGPT 3.5</h2>
+
+        <p>
+            Please create me HTML5 that goes inside my content div:
+        </p>
+
+        <p>
+
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;head&gt;
+            &lt;title&gt;&lt;/title&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+            &lt;title&gt;Home&lt;/title&gt;
+            &lt;link id="styleSheetInUse" href="./style.css" rel="stylesheet"&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            &lt;div id="menu-banner"&gt;
+            &lt;h1 id="header-name"&gt;
+            &lt;a href="./../index.html" id="headerName"&gt;
+            Jaxon Singleton
+            &lt;/a&gt;
+            &lt;/h1&gt;
+
+
+            &lt;div class="drop-down" id="menu-buttons-container"&gt;
+            &lt;a href="./../index.html"&gt;&lt;button class="menu-button" id="landingPage"&gt; Home
+            &lt;/button&gt;&lt;/a&gt;
+            &lt;a href="./../portfolio/index.html"&gt;&lt;button class="menu-button" id="portfolio"&gt; Portfolio
+            &lt;/button&gt;&lt;/a&gt;
+            &lt;a href="./../qualifications/index.html"&gt;&lt;button class="menu-button" id="qualifications"&gt;
+            Qualifications &lt;/button&gt;&lt;/a&gt;
+            &lt;a href="./../service/index.html"&gt;&lt;button class="menu-button" id="service"&gt; Service
+            &lt;/button&gt;&lt;/a&gt;
+            &lt;a href="./../Ai-generated_ContactPage/index.html"&gt;&lt;button class="menu-button"
+            id="ai-generated_ContactPage"&gt; Contact &lt;/button&gt;&lt;/a&gt;
+
+            &lt;a href=""&gt;&lt;button onclick="toggleStyleSheet()" class="menu-button"&gt; Toggle Theme
+            &lt;/button&gt;&lt;/a&gt;
+            &lt;script src="script.js"&gt; &lt;/script&gt;
+
+            &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="content"&gt;
+
+
+            &lt;/div&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+
+        </p>
+
+        <p>
+            Okay so I want a contact button that takes any user to their native email appilication and send a message to
+            my email "jaxonsingleton@tamu.edu" and with the subject "I WANT TO HIRE YOU!"
+
+            Above the contact page I want a "Contact Me" h2 header.
+            Below the "Contact Me" I want a paragraph that reads "Please reach out to me if you think I would be a good
+            fit for the project"
+
+
+            Next Create CSS that matches the theme of my page. Make sure the button looks very nice and professional.
+            Additonally make sure everything is centered.
+
+            Here is the css I have been using:
+
+        </p>
+
+
+        <p>
+            html{
+            min-height: 100%; /* This makes the gradient keep flowing through the entire content and not repeat*/
+            }
+
+
+            body {
+            height: 100%;
+            width: 60%;
+            background: linear-gradient(to bottom, #005379, #000);
+            color: white;
+            margin: 0 auto;
+            padding-left: 15%;
+            padding-right: 15%;
+            padding-bottom: 1em;
+            padding-top: 2%;
+
+            }
+
+
+
+            h1, #headerName {
+            font-size: 2em;
+            background: linear-gradient(to right, #ff69b4, #9e18d7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+            margin: 0;
+            }
+
+            #headerName{
+            text-decoration: none;
+
+            }
+
+
+
+
+            h2 {
+            font-size: 3em;
+            background: linear-gradient(to right, #50d3ff, #bf2ffd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+            margin: 0;
+            margin-top: 1em;
+            }
+
+            #menu-banner{
+            justify-content: center;
+            }
+            #menu-buttons-container{
+
+
+            background: radial-gradient(circle at center, rgba(255, 64, 207, 0.398), rgba(255, 0, 208, 0.138));
+
+            width: max-content;
+            margin: 0 auto;
+            padding: 1%;
+            display: flex;
+            border-radius: 15px;
+            margin-top: 1em;
+
+            }
+
+            #menu-buttons-container button{
+            margin-top: 20px;
+            font-size: 1em;
+            font-weight: bold;
+            margin: 0.5em;
+            padding: 0.75em;
+            text-align: center;
+            flex-grow: 1;
+            background-color: transparent;
+            box-shadow: none;
+            border: none;
+
+            }
+
+
+            #menu-button button{
+            /* This doesnt work for some reason... go back and delete this ID in html*/
+            text-align: center;
+            }
+
+
+
+            .box {
+            margin: 0 auto;
+            background: radial-gradient(circle at center, rgba(255, 64, 207, 0.398), rgba(255, 0, 208, 0.138));
+            border-radius: 15px;
+            padding: 1em;
+            text-align: center;
+
+            }
+
+            .content {
+            margin-top: 1.5em;
+            margin-bottom: 1.5em;
+            margin: 0 auto;
+
+            }
+
+            #contactMe{
+            border-radius: 20em;
+            font-weight: bold;
+            font-size: 2em;
+            background-color: rgba(255, 255, 255, 0.45);
+            box-shadow: none;
+            border: none;
+            }
+
+            #text {
+            font-size: 1.5em;
+            }
+        </p>
+
+
+
+    </div>
+
+
+</body>
+
 </html>
-
-

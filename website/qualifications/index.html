@@ -1,95 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home</title>
-        <link id="styleSheetInUse" href="./style.css" rel="stylesheet">
-    </head>
-    <body>
-        <div id="menu-banner">
-            <h1 id="header-name">
-                <a href="./../index.html" id="headerName">
-                    Jaxon Singleton
-                </a>
-            </h1>
 
-            
-            <div class="drop-down" id = "menu-buttons-container"> 
-                <a href="./../index.html"><button class ="menu-button" id="landingPage"> Home </button></a>
-                <a href="./../portfolio/index.html"><button class ="menu-button" id="portfolio"> Portfolio </button></a>
-                <a href="./../qualifications/index.html"><button class="menu-button" id="qualifications"> Qualifications </button></a>
-                <a href="./../service/index.html"><button class="menu-button" id="service"> Service </button></a>
-                <a href="./../Ai-generated_ContactPage/index.html"><button class="menu-button" id="ai-generated_ContactPage"> Contact </button></a>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
 
-                <a href=""><button onclick="toggleStyleSheet()" class="menu-button"> Toggle Theme </button> </a>
-                <script src="script.js"> </script>
+    <!-- Preload critical assets (CSS, JS, images) -->
+    <link rel="preload" href="./style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="/IMG_7011.png" as="image">
 
-    
+    <!-- Prefetch assets for future navigation -->
+    <link rel="prefetch" href="/portfolio/">
+    <link rel="prefetch" href="/qualifications/">
+    <link rel="prefetch" href="/service/">
+    <link rel="prefetch" href="/Ai-generated_ContactPage/">
 
-            </div>
+    <link id="styleSheetInUse" href="./style.css" rel="stylesheet">
+</head>
 
-        </div>
-
-        <div class= "content">
-
-            <h2 id="qualifications"> Qualifications </h2> 
-            <h2> Programming Languages </h2>
-            <div class="box">
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/Go_(programming_language)") > Go </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/C%2B%2B")> C++ </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/Java_(programming_language)") > Java </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/Python_(programming_language)")> Python </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/HTML")> HTML </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/CSS")> CSS </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/JavaScript")> JavaScript </button>
-
-            </div>
+<body>
+    <div id="menu-banner">
+        <h1 id="header-name">
+            <a href="./../index.html" id="headerName">
+                Jaxon Singleton
+            </a>
+        </h1>
 
 
-            <h2> Frameworks and Tools </h2>
-            <div class="box">
-                
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/React_(software)")> React.js </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/Next.js")> next.js </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/Flask_(web_framework)#:~:text=Flask%20is%20a%20micro%20web,party%20libraries%20provide%20common%20functions.")> Flask </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/SQL")> SQL </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/NoSQL")> NOsql </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/Amazon_S3")> AWS S3 </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud")> AWS EC2 </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/MariaDB")> MariaDB </button>
+        <div class="drop-down" id="menu-buttons-container">
+            <a href="/"><button class="menu-button" id="landingPage"> Home </button></a>
+            <a href="/portfolio/"><button class="menu-button" id="portfolio"> Portfolio </button></a>
+            <a href="/qualifications/"><button class="menu-button" id="qualifications"> Qualifications </button></a>
+            <a href="/service/"><button class="menu-button" id="service"> Service </button></a>
+            <a href="/Ai-generated_ContactPage/"><button class="menu-button" id="ai-generated_ContactPage"> Contact
+                </button></a>
 
-
-            </div>
-
-
-            <h2> Skills </h2>
-            <div class="box">
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/Debugging")> Memory Debugging</button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/REST")> RESTful API </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/Teamwork")> Team Player </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/Computer_security")> Security </button>
-                <button class="bulletpoint" onclick= toLink("https://en.wikipedia.org/wiki/Task-oriented_and_relationship-oriented_leadership")> Detail Oriented </button>
-
-            </div>
-
-            <h2>Area of Interest in Computer Science</h2>
-            <div class="box">
-           
-                <p> My main area of interest is in back-end engineering.
-                     In this area, I most interested in distributed systems.
-                      I am currently most interested in this field as the ever
-                       growing industry continuously demands more in terms of access to data,
-                        efficiency, and low-fault tolerance.</p>
-            </div>
+            <a href=""><button onclick="toggleStyleSheet()" class="menu-button"> Toggle Theme </button> </a>
+            <script src="script.js"> </script>
 
 
 
         </div>
 
-    
-    </body>
+    </div>
+
+    <div class="content">
+
+        <h2 id="qualifications"> Qualifications </h2>
+        <h2> Programming Languages </h2>
+        <div class="box">
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/Go_(programming_language)")> Go
+            </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/C%2B%2B")> C++ </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/Java_(programming_language)")>
+                Java </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/Python_(programming_language)")>
+                Python </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/HTML")> HTML </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/CSS")> CSS </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/JavaScript")> JavaScript </button>
+
+        </div>
+
+
+        <h2> Frameworks and Tools </h2>
+        <div class="box">
+
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/React_(software)")> React.js
+            </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/Next.js")> next.js </button>
+            <button class="bulletpoint"
+                onclick=toLink("https://en.wikipedia.org/wiki/Flask_(web_framework)#:~:text=Flask%20is%20a%20micro%20web,party%20libraries%20provide%20common%20functions.")>
+                Flask </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/SQL")> SQL </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/NoSQL")> NOsql </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/Amazon_S3")> AWS S3 </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud")>
+                AWS EC2 </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/MariaDB")> MariaDB </button>
+
+
+        </div>
+
+
+        <h2> Skills </h2>
+        <div class="box">
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/Debugging")> Memory
+                Debugging</button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/REST")> RESTful API </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/Teamwork")> Team Player </button>
+            <button class="bulletpoint" onclick=toLink("https://en.wikipedia.org/wiki/Computer_security")> Security
+            </button>
+            <button class="bulletpoint"
+                onclick=toLink("https://en.wikipedia.org/wiki/Task-oriented_and_relationship-oriented_leadership")>
+                Detail Oriented </button>
+
+        </div>
+
+        <h2>Area of Interest in Computer Science</h2>
+        <div class="box">
+
+            <p> My main area of interest is in back-end engineering.
+                In this area, I most interested in distributed systems.
+                I am currently most interested in this field as the ever
+                growing industry continuously demands more in terms of access to data,
+                efficiency, and low-fault tolerance.</p>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
 </html>
-
-

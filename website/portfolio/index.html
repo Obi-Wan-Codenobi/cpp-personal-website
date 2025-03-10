@@ -1,104 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home</title>
-        <link id="styleSheetInUse" href="./style.css" rel="stylesheet">
-    </head>
-    <body>
-        <div id="menu-banner">
-            <h1 id="header-name">
-                <a href="./../index.html" id="headerName">
-                    Jaxon Singleton
-                </a>
-            </h1>
 
-            
-            <div class="drop-down" id = "menu-buttons-container"> 
-                <a href="./../index.html"><button class ="menu-button" id="landingPage"> Home </button></a>
-                <a href="./../portfolio/index.html"><button class ="menu-button" id="portfolio"> Portfolio </button></a>
-                <a href="./../qualifications/index.html"><button class="menu-button" id="qualifications"> Qualifications </button></a>
-                <a href="./../service/index.html"><button class="menu-button" id="service"> Service </button></a>
-                <a href="./../Ai-generated_ContactPage/index.html"><button class="menu-button" id="ai-generated_ContactPage"> Contact </button></a>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <!-- Preload critical assets (CSS, JS, images) -->
+    <link rel="preload" href="./style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="/IMG_7011.png" as="image">
 
-                <a href=""><button onclick="toggleStyleSheet()" class="menu-button"> Toggle Theme </button> </a>
-                <script src="script.js"> </script>
-
+    <!-- Prefetch assets for future navigation -->
+    <link rel="prefetch" href="/portfolio/">
+    <link rel="prefetch" href="/qualifications/">
+    <link rel="prefetch" href="/service/">
+    <link rel="prefetch" href="/Ai-generated_ContactPage/">
     
+    <link id="styleSheetInUse" href="./style.css" rel="stylesheet">
+</head>
 
-            </div>
+<body>
+    <div id="menu-banner">
+        <h1 id="header-name">
+            <a href="./../index.html" id="headerName">
+                Jaxon Singleton
+            </a>
+        </h1>
+
+
+        <div class="drop-down" id="menu-buttons-container">
+            <a href="/"><button class="menu-button" id="landingPage"> Home </button></a>
+            <a href="/portfolio/"><button class="menu-button" id="portfolio"> Portfolio </button></a>
+            <a href="/qualifications/"><button class="menu-button" id="qualifications"> Qualifications </button></a>
+            <a href="/service/"><button class="menu-button" id="service"> Service </button></a>
+            <a href="/Ai-generated_ContactPage/"><button class="menu-button" id="ai-generated_ContactPage"> Contact
+                </button></a>
+
+            <a href=""><button onclick="toggleStyleSheet()" class="menu-button"> Toggle Theme </button> </a>
+            <script src="script.js"> </script>
+
+
 
         </div>
 
-        <div class= "content">
+    </div>
 
-            <h2> Experience </h2>
+    <div class="content">
 
-            <div class="box">
-                <div class="title">Software Development Engineer</div>
-                <div class="date-location">December 2023 - Present | Houston, TX</div>
-                <ul class="description">
-                    <li>Increased maintainability on website by using HTMX, CSS with Bootstrap, and JavaScript on AWS S3</li>
-                    <li>Developing web API in Go using AWS EC2 to reduce cold starts from serverless functions, update MariaDB, and service third-party API</li>
-                </ul>
+        <h2> Experience </h2>
+
+        <div class="box">
+            <div class="title">Software Development Engineer</div>
+            <div class="date-location">December 2023 - Present | Houston, TX</div>
+            <ul class="description">
+                <li>Increased maintainability on website by using HTMX, CSS with Bootstrap, and JavaScript on AWS S3
+                </li>
+                <li>Developing web API in Go using AWS EC2 to reduce cold starts from serverless functions, update
+                    MariaDB, and service third-party API</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <div class="title">Software Development Engineer Intern</div>
+            <div class="date-location">June 2023 - August 2023 | Houston, TX</div>
+            <ul class="description">
+                <li>Developed React scheduling dashboard to notify and dispatch workers to various shipping terminals
+                </li>
+                <li>Created prototype using Firebase and Google Cloud Platform to dynamically update website and
+                    real-time database (NoSQL) using Node.js</li>
+                <li>Reduced calls to operator up to 60% by using serverless functions to receive and send Twilio SMS
+                    between operator and workers</li>
+                <li>Eliminated 3rd party subscription for mass SMS messaging by creating in-house tool for sending
+                    specific mass text messages based on given parameters using Twilio’s API</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <div class="title">Data Analyst</div>
+            <div class="date-location">August 2022 – April 2023 | College Station, TX</div>
+            <ul class="description">
+                <li>Collaborated with a team of 8 on Cognitive Learning perceptions students may have about science</li>
+                <li>Developed a Python script employing Natural Language Processing (NLP) techniques, including NLTK
+                    Word Tokenization and Scikit-learn, to automate the sorting and analysis of free response questions
+                </li>
+                <li>Utilized NLP to identify and group similar responses based on keywords and sentiment analysis</li>
+                <li>Facilitated the discovery that research-based physiology classes play a pivotal role in broadening
+                    students' perspectives on the essence of science</li>
+            </ul>
+        </div>
+
+        <h2> Projects </h2>
+
+        <div class="box">
+            <div class="title-container">
+                <div class="title">Content Aware Image Cropping | </div>
+                <div class="techStack"> C++ </div>
             </div>
+            <div class="date-location">March 2023</div>
+            <ul class="description">
+                <li>Developed tool using C++ that crops images by utilizing Seam Carving to remove unimportant pixels
+                </li>
+                <li>Implemented Seam Carving algorithm by computing the energy value of adjacent pixels and dynamically
+                    identifying the optimal seam path through pixel manipulation</li>
+            </ul>
+        </div>
 
-            <div class="box">
-                <div class="title">Software Development Engineer Intern</div>
-                <div class="date-location">June 2023 - August 2023 | Houston, TX</div>
-                <ul class="description">
-                    <li>Developed React scheduling dashboard to notify and dispatch workers to various shipping terminals</li>
-                    <li>Created prototype using Firebase and Google Cloud Platform to dynamically update website and real-time database (NoSQL) using Node.js</li>
-                    <li>Reduced calls to operator up to 60% by using serverless functions to receive and send Twilio SMS between operator and workers</li>
-                    <li>Eliminated 3rd party subscription for mass SMS messaging by creating in-house tool for sending specific mass text messages based on given parameters using Twilio’s API</li>
-                </ul>
+        <div class="box">
+            <div class="title-container">
+                <div class="title">Puzzle Solver using AI | </div>
+                <div class="techStack"> Python, Conda, TensorFlow, Pillow, Scikit-learn </div>
             </div>
-
-            <div class="box">
-                <div class="title">Data Analyst</div>
-                <div class="date-location">August 2022 – April 2023 | College Station, TX</div>
-                <ul class="description">
-                    <li>Collaborated with a team of 8 on Cognitive Learning perceptions students may have about science</li>
-                    <li>Developed a Python script employing Natural Language Processing (NLP) techniques, including NLTK Word Tokenization and Scikit-learn, to automate the sorting and analysis of free response questions</li>
-                    <li>Utilized NLP to identify and group similar responses based on keywords and sentiment analysis</li>
-                    <li>Facilitated the discovery that research-based physiology classes play a pivotal role in broadening students' perspectives on the essence of science</li>
-                </ul>
-            </div>
-
-            <h2> Projects </h2>
-
-            <div class="box">
-                <div class="title-container">
-                    <div class="title">Content Aware Image Cropping | </div>
-                    <div class="techStack"> C++ </div>
-                </div>
-                <div class="date-location">March 2023</div>
-                <ul class="description">
-                    <li>Developed tool using C++ that crops images by utilizing Seam Carving to remove unimportant pixels</li>
-                    <li>Implemented Seam Carving algorithm by computing the energy value of adjacent pixels and dynamically identifying the optimal seam path through pixel manipulation</li>
-                </ul>
-            </div>
-
-            <div class="box">
-                <div class="title-container">
-                    <div class="title">Puzzle Solver using AI | </div>
-                    <div class="techStack"> Python, Conda, TensorFlow, Pillow, Scikit-learn </div>
-                </div>
-                <div class="date-location">October 2022</div>
-                <ul class="description">
-                    <li>Developed machine learning algorithm in Python with a group of 4 during TAMU Datathon to solve 2x2 puzzles using supervised learning on a data set of 80,000 images</li>
-                    <li>Employed Keras to construct the neural network model and Pillow to create additional data samples</li>
-                    <li>Utilized TensorFlow and Scikit-learn for model training for efficient convergence</li>
-                </ul>
-            </div>
-
-           
+            <div class="date-location">October 2022</div>
+            <ul class="description">
+                <li>Developed machine learning algorithm in Python with a group of 4 during TAMU Datathon to solve 2x2
+                    puzzles using supervised learning on a data set of 80,000 images</li>
+                <li>Employed Keras to construct the neural network model and Pillow to create additional data samples
+                </li>
+                <li>Utilized TensorFlow and Scikit-learn for model training for efficient convergence</li>
+            </ul>
         </div>
 
 
-    </body>
+    </div>
+
+
+</body>
+
 </html>
-
-
