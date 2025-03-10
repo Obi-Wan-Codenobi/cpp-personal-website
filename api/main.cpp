@@ -12,6 +12,7 @@
 #include "util/utils.h"
 #include "config/environmentVars.h"
 #include "routes/routes.h"
+#include <memory>
 
 int runningAsRoot();
 void apiServe(util::Logger log);
@@ -50,7 +51,13 @@ int main(int argc, char *argv[])
 
     while (1)
     {
-        apiServe(log);
+        try {
+            apiServe(log);
+        }
+        catch(...){
+            log.info("An Unknown error occurred...\n\nRestarting process...\n");
+
+        }
     }
     return 0;
 }
@@ -74,6 +81,8 @@ void apiServe(util::Logger log)
     }
 
     SSL *ssl;
+
+    std::unique_ptr<routes::Router> router = std::make_unique<routes::Router>();
     while (1)
     {
 
@@ -111,20 +120,12 @@ void apiServe(util::Logger log)
         printf("server received %d bytes\n", rc);
         
         util::Request received_request (std::string(buffer.begin(), buffer.end()));
-        received_request.printRequest();
+        
+        //received_request.printRequest();
+        log.info(received_request.getRequestWithoutHeadersString());
 
-        std::string response_body = routes::router(received_request);
-        std::string content_length = std::to_string(response_body.size());
-
-        std::string msg = 
-            "HTTP/1.1 200 OK\r\n"
-            "Content-Type: text/html\r\n"
-            "Content-Length: " + content_length +"\r\n"
-            "Connection: close\r\n"
-            "\r\n" +
-            response_body;
-
-
+        std::string msg = router->process(received_request);
+        log.info(msg);
         rc = SSL_write(ssl, msg.data(), msg.size());
         if (rc < 0)
         {
