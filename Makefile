@@ -44,6 +44,7 @@ help:
 	@echo "  make                             - Compile api and run"
 	@echo "  make log                         - Compile api and run with logging"
 	@echo "  make compile                     - Compile main.c"
+	@echo "  make cert                        - Make local cert files"
 	@echo "  make run                         - Run the api executable"
 	@echo "  make clean                       - Remove the executable"
 	@echo "  make help                        - Show this help message"
