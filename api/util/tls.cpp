@@ -39,12 +39,12 @@ namespace util
         return strlen(PEM_KEY_PASSWORD);
     }
 
-    void LoadCertificates(SSL_CTX *ctx, const char *CertFile, const char *KeyFile, Logger log)
+    void LoadCertificates(SSL_CTX *ctx, const char *CertFile, const char *KeyFile, std::shared_ptr<util::Logger> log)
     {
         /* set the local certificate from CertFile */
         if (SSL_CTX_use_certificate_file(ctx, CertFile, SSL_FILETYPE_PEM) <= 0)
         {
-            log.error("Failed to set local cert");
+            log->error("Failed to set local cert");
             ERR_print_errors_fp(stderr);
             abort();
         }
@@ -53,14 +53,14 @@ namespace util
         /* set the private key from KeyFile (may be the same as CertFile) */
         if (SSL_CTX_use_PrivateKey_file(ctx, KeyFile, SSL_FILETYPE_PEM) <= 0)
         {
-            log.error("Failed to set private key");
+            log->error("Failed to set private key");
             ERR_print_errors_fp(stderr);
             abort();
         }
         /* verify private key */
         if (!SSL_CTX_check_private_key(ctx))
         {
-            log.error("Failed to verify private key");
+            log->error("Failed to verify private key");
             fprintf(stderr, "Private key does not match the public certificate\n");
             abort();
         }
