@@ -19,6 +19,7 @@ namespace routes {
                 "HTTP/1.1 200 OK\r\n"
                 "Content-Type: " + util::getFileType(filePath) + "\r\n"
                 "Content-Length: " + std::to_string(response_body.size()) + "\r\n"
+                "Content-Encoding: gzip\r\n"
                 "Connection: keep-alive\r\n"
                 "\r\n";
             response = headers + response_body;
@@ -31,6 +32,7 @@ namespace routes {
                 "HTTP/1.1 200 OK\r\n"
                 "Content-Type: " + util::getFileType(filePath) + "\r\n"
                 "Content-Length: " + std::to_string(file_content.size()) + "\r\n"
+                "Content-Encoding: gzip\r\n"
                 "Connection: keep-alive\r\n"
                 "\r\n";
             response.reserve(headers.size() + file_content.size());
