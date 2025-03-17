@@ -13,7 +13,8 @@ namespace util {
         {".txt", "text/plain"},
         {".jpg", "img/jpeg"},
         {".jpeg", "img/jpeg"},
-        {".png", "img/png"}
+        {".png", "img/png"},
+        {".svg", "image/svg+xml"}
     };
 
     // Helper function to get file type
