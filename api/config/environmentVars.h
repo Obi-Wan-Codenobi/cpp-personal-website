@@ -5,6 +5,6 @@
 #define SERVER_PORT 3005
 #define FALSE 0
 #define PEM_KEY_PASSWORD "pass"
-#define STATIC_FILES "website"
+#define STATIC_FILES "./../portfolio-website/portfolio-website/out/"
 
 #endif
