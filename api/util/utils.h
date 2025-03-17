@@ -6,5 +6,6 @@
 #include "formatRequest.cpp"
 #include "formatResponse.cpp"
 #include "fileReading.cpp" 
+#include "zlib_compress.cpp"
 
 #endif
