@@ -6,9 +6,12 @@ KEY=key.pem
 #OPENSSL_INCLUDE_PATH=/usr/include/openssl
 #OPENSSL_LIB_PATH=/usr/lib/x86_64-linux-gnu
 
-# OpenSSL paths for mac/homebrew
+# OpenSSL & zlib paths for mac/homebrew
 OPENSSL_INCLUDE_PATH=/opt/homebrew/opt/openssl@3/include
 OPENSSL_LIB_PATH=/opt/homebrew/opt/openssl@3/lib
+ZLIB_INCLUDE_PATH=/opt/homebrew/opt/zlib/include
+ZLIB_LIB_PATH=/opt/homebrew/opt/zlib/lib
+
 
 .PHONY: all
 all: compile run
@@ -16,7 +19,10 @@ all: compile run
 .PHONY: compile
 compile:
 	@echo "Compiling $(COMPILED_FILE_NAME) ..."
-	g++ -std=c++23 -Wall -O3 -I$(OPENSSL_INCLUDE_PATH) -L$(OPENSSL_LIB_PATH) $(MAIN_API_FILE) -o $(COMPILED_FILE_NAME) -lssl -lcrypto
+	g++ -std=c++23 -Wall -O3 \
+		-I$(OPENSSL_INCLUDE_PATH) -I$(ZLIB_INCLUDE_PATH) \
+		-L$(OPENSSL_LIB_PATH) -L$(ZLIB_LIB_PATH) $(MAIN_API_FILE) \
+		-o $(COMPILED_FILE_NAME) -lssl -lcrypto -lz
 
 .PHONY: run
 run: 
