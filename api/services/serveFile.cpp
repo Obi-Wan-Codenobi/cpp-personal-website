@@ -44,7 +44,8 @@ namespace services
                     if(file_content.size() <=0){
                         std::cerr<<"Error: " <<"Binary file did not load"<<std::endl;
                     }
-                    binary_files.insert({webPagePath, file_content});
+                    std::vector<std::byte> compressed_data =  util::compressGzip(file_content);
+                    binary_files.insert({webPagePath, compressed_data});
                     
                 }
                 else {
@@ -54,8 +55,8 @@ namespace services
                     if(file_content.size() <=0){
                         std::cerr<<"Error: " <<"Text file did not load"<<std::endl;
                     }
-
-                    pages.insert({webPagePath, file_content});
+                    std::string compressed_data =  util::compressGzip(file_content);
+                    pages.insert({webPagePath, compressed_data});
                 }
             }
 
